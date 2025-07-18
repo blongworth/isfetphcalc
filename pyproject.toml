@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "phcalc"
+name = "isfet-phcalc"
 version = "0.1.0"
 description = "pH calculation package for ISFET pH data processing"
 readme = "README.md"
@@ -33,7 +33,7 @@ dev = [
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/phcalc"]
+packages = ["src/isfet_phcalc"]
 
 [tool.hatch.envs.default]
 dependencies = [
@@ -43,11 +43,11 @@ dependencies = [
 
 [tool.hatch.envs.default.scripts]
 test = "pytest {args:tests}"
-test-cov = "pytest --cov-report=term-missing --cov=phcalc {args:tests}"
-cov-report = "pytest --cov-report=html --cov=phcalc {args:tests}"
+test-cov = "pytest --cov-report=term-missing --cov=isfet_phcalc {args:tests}"
+cov-report = "pytest --cov-report=html --cov=isfet_phcalc {args:tests}"
 
 [tool.hatch.version]
-path = "src/phcalc/__init__.py"
+path = "src/isfet_phcalc/__init__.py"
 
 [project.urls]
 Homepage = "https://github.com/yourusername/phcalc"

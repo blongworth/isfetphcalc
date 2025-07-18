@@ -4,7 +4,7 @@ Example usage of the phcalc package.
 """
 
 import numpy as np
-from phcalc import calc_pH
+from isfet_phcalc import calc_pH
 
 def main():
     """Demonstrate basic usage of the calc_pH function."""

@@ -1,4 +1,4 @@
-# phcalc
+# isfet-phcalc
 
 A Python package for calculating pH values from ISFET sensor data in ocean biogeochemical applications, specifically designed for BGC-Argo data processing.
 
@@ -16,14 +16,14 @@ Processing BGC-Argo pH data at the DAC level (https://doi.org/10.13155/57195)
 Install the package using uv:
 
 ```bash
-uv add phcalc
+uv add isfet-phcalc
 ```
 
 Or from source:
 
 ```bash
-git clone https://github.com/yourusername/phcalc.git
-cd phcalc
+git clone https://github.com/yourusername/isfet-phcalc.git
+cd isfet-phcalc
 uv pip install -e .
 ```
 
@@ -31,7 +31,7 @@ uv pip install -e .
 
 ```python
 import numpy as np
-from phcalc import calc_pH
+from isfet_phcalc import calc_pH
 
 # Example data (realistic BGC-Argo sensor values)
 Vrs = np.array([-0.941602, -0.945, -0.940])  # Voltage between reference electrode and ISFET source

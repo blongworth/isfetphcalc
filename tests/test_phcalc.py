@@ -1,10 +1,10 @@
 """
-Basic tests for the phcalc package.
+Basic tests for the isfet-phcalc package.
 """
 
 import numpy as np
 import pytest
-from phcalc import calc_pH
+from isfet_phcalc import calc_pH
 
 def test_calc_pH_basic():
     """Test basic functionality of calc_pH function."""
