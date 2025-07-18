@@ -1,0 +1,56 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "phcalc"
+version = "0.1.0"
+description = "pH calculation package for ISFET pH data processing"
+readme = "README.md"
+requires-python = ">=3.13"
+authors = [
+    {name = "Your Name", email = "your.email@example.com"},
+]
+license = {text = "MIT"}
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Chemistry",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+keywords = ["pH", "ocean", "biogeochemistry", "argo", "seawater"]
+dependencies = [
+    "numpy>=2.3.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/phcalc"]
+
+[tool.hatch.envs.default]
+dependencies = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+]
+
+[tool.hatch.envs.default.scripts]
+test = "pytest {args:tests}"
+test-cov = "pytest --cov-report=term-missing --cov=phcalc {args:tests}"
+cov-report = "pytest --cov-report=html --cov=phcalc {args:tests}"
+
+[tool.hatch.version]
+path = "src/phcalc/__init__.py"
+
+[project.urls]
+Homepage = "https://github.com/yourusername/phcalc"
+Repository = "https://github.com/yourusername/phcalc"
+Documentation = "https://github.com/yourusername/phcalc"
+Issues = "https://github.com/yourusername/phcalc/issues"
