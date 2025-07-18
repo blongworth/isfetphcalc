@@ -50,7 +50,7 @@ cov-report = "pytest --cov-report=html --cov=isfet_phcalc {args:tests}"
 path = "src/isfet_phcalc/__init__.py"
 
 [project.urls]
-Homepage = "https://github.com/yourusername/phcalc"
-Repository = "https://github.com/yourusername/phcalc"
-Documentation = "https://github.com/yourusername/phcalc"
-Issues = "https://github.com/yourusername/phcalc/issues"
+Homepage = "https://github.com/blongworth/isfet-phcalc"
+Repository = "https://github.com/blongworth/isfet-phcalc"
+Documentation = "https://github.com/blongworth/isfet-phcalc"
+Issues = "https://github.com/blongworth/isfet-phcalc/issues"
