@@ -1,5 +1,5 @@
 """
-Basic tests for the isfet-phcalc package.
+Basic tests for the isfetphcalc package.
 """
 
 import numpy as np
