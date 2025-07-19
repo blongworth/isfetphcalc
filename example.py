@@ -4,10 +4,10 @@ Example usage of the phcalc package.
 """
 
 import numpy as np
-from isfet_phcalc import calc_pH
+from isfet_phcalc import calc_ph
 
 def main():
-    """Demonstrate basic usage of the calc_pH function."""
+    """Demonstrate basic usage of the calc_ph function."""
     
     print("pH calculation example using phcalc package")
     print("=" * 50)
@@ -36,7 +36,7 @@ def main():
     print()
     
     # Calculate pH
-    pHfree, pHtot = calc_pH(Vrs, Press, Temp, Salt, k0, k2, Pcoefs)
+    pHfree, pHtot = calc_ph(Vrs, Press, Temp, Salt, k0, k2, Pcoefs)
     
     print("Results:")
     print(f"  pH (free scale): {pHfree}")

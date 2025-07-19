@@ -33,7 +33,7 @@ dev = [
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/isfetphcalc"]
+packages = ["isfetphcalc"]
 
 [tool.hatch.envs.default]
 dependencies = [

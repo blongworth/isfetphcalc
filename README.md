@@ -31,7 +31,7 @@ uv pip install -e .
 
 ```python
 import numpy as np
-from isfet_phcalc import calc_pH
+from isfet_phcalc import calc_ph
 
 # Example data (realistic BGC-Argo sensor values)
 Vrs = np.array([-0.941602, -0.945, -0.940])  # Voltage between reference electrode and ISFET source
@@ -43,7 +43,7 @@ k2 = -0.0010626                              # Linear temperature coefficient
 Pcoefs = np.array([0.0, 0.0])               # Pressure coefficients (no pressure correction)
 
 # Calculate pH
-pHfree, pHtot = calc_pH(Vrs, Press, Temp, Salt, k0, k2, Pcoefs)
+pHfree, pHtot = calc_ph(Vrs, Press, Temp, Salt, k0, k2, Pcoefs)
 
 print(f"pH free scale: {pHfree}")
 print(f"pH total scale: {pHtot}")
@@ -51,7 +51,7 @@ print(f"pH total scale: {pHtot}")
 
 ## Function Reference
 
-### `calc_pH(Vrs, Press, Temp, Salt, k0, k2, Pcoefs)`
+### `calc_ph(Vrs, Press, Temp, Salt, k0, k2, Pcoefs)`
 
 Calculate pH values from ISFET sensor data.
 
@@ -74,11 +74,3 @@ The calculations are based on:
 - Dickson, A. G., Sabine, C. L., & Christian, J. R. (2007). Guide to best practices for ocean CO2 measurements.
 - BGC-Argo pH processing documentation (https://doi.org/10.13155/57195)
 - Original MATLAB implementation from SOCCOM-BGCArgo/ARGO_PROCESSING
-
-## License
-
-MIT License
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.

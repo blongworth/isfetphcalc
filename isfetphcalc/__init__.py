@@ -5,7 +5,7 @@ This package provides functions for calculating pH values from ISFET sensor data
 in ocean biogeochemical applications.
 """
 
-from .core import calc_pH
+from .core import calc_ph
 
 __version__ = "0.1.0"
-__all__ = ["calc_pH"]
+__all__ = ["calc_ph"]

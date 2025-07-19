@@ -1,6 +1,6 @@
 import numpy as np
 
-def calc_pH(Vrs, Press, Temp, Salt, k0, k2, Pcoefs):
+def calc_ph(Vrs, Press, Temp, Salt, k0, k2, Pcoefs):
     '''
 
     INPUTS (numpy arrays):
