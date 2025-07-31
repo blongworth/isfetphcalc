@@ -36,6 +36,60 @@ def test_calc_ph_basic():
     np.testing.assert_allclose(pHfree[0], 7.9271, rtol=1e-4, atol=1e-4)
     np.testing.assert_allclose(pHtot[0], 7.8382, rtol=1e-4, atol=1e-4)
 
+def test_calc_ph_single():
+    """Test basic functionality of calc_ph function."""
+    # Test data with realistic BGC-Argo sensor values
+    Vrs = -0.941602
+    Press = 0.0
+    Temp = 21.0
+    Salt = 30.0
+    k0 = -1.4156395
+    k2 = -0.0010626
+    Pcoefs = 0
+    
+    # Calculate pH
+    pHfree, pHtot = calc_ph(Vrs, Press, Temp, Salt, k0, k2, Pcoefs)
+    
+    # Basic checks
+    assert isinstance(pHfree, (np.ndarray, np.floating))
+    assert isinstance(pHtot, (np.ndarray, np.floating))
+    assert np.all(np.isfinite(pHfree))
+    assert np.all(np.isfinite(pHtot))
+    
+    # pH values should be finite numbers (exact range depends on calibration)
+    assert isinstance(pHfree, (int, float, np.floating))
+    assert isinstance(pHtot, (int, float, np.floating))
+
+    # test for correct values
+    np.testing.assert_allclose(pHfree, 7.9271, rtol=1e-4, atol=1e-4)
+    np.testing.assert_allclose(pHtot, 7.8382, rtol=1e-4, atol=1e-4)
+
+def test_calc_ph_defaults():
+    """Test basic functionality of calc_ph function."""
+    # Test data with realistic BGC-Argo sensor values
+    Vrs = -0.941602
+    Temp = 21.0
+    Salt = 30.0
+    k0 = -1.4156395
+    k2 = -0.0010626
+    
+    # Calculate pH
+    pHfree, pHtot = calc_ph(Vrs, Temp=Temp, Salt=Salt, k0=k0, k2=k2)
+    
+    # Basic checks
+    assert isinstance(pHfree, (np.ndarray, np.floating))
+    assert isinstance(pHtot, (np.ndarray, np.floating))
+    assert np.all(np.isfinite(pHfree))
+    assert np.all(np.isfinite(pHtot))
+    
+    # pH values should be finite numbers (exact range depends on calibration)
+    assert isinstance(pHfree, (int, float, np.floating))
+    assert isinstance(pHtot, (int, float, np.floating))
+
+    # test for correct values
+    np.testing.assert_allclose(pHfree, 7.9271, rtol=1e-4, atol=1e-4)
+    np.testing.assert_allclose(pHtot, 7.8382, rtol=1e-4, atol=1e-4)
+
 def test_calc_ph_arrays():
     """Test calc_ph with array inputs."""
     # Test with multiple realistic data points
